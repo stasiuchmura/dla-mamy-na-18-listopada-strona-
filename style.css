@@ -1,0 +1,268 @@
+:root {
+  --bg: #fefdfb;
+  --text: #191715;
+  --muted: #5e5a55;
+  --accent: #c8b9a0;
+  --max-width: 1250px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  color: var(--text);
+  background-color: #fff;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+main {
+  overflow: hidden;
+}
+
+h1,
+h2 {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin: 0 0 24px;
+  color: var(--text);
+}
+
+p {
+  margin: 0 0 20px;
+  color: var(--muted);
+}
+
+ul {
+  padding-left: 20px;
+  margin: 0 0 32px;
+  color: var(--text);
+  line-height: 1.9;
+}
+
+strong {
+  color: var(--text);
+}
+
+.hero {
+  display: grid;
+  gap: 32px;
+  padding: 80px 24px 40px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  align-items: center;
+}
+
+.hero__image {
+  order: 1;
+}
+
+.hero__content {
+  order: 2;
+  text-align: center;
+}
+
+.hero__label {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  margin-bottom: 16px;
+  color: var(--muted);
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  margin-bottom: 16px;
+}
+
+.hero__subheadline {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  letter-spacing: 0.1em;
+  color: var(--text);
+  margin-bottom: 32px;
+}
+
+.hero__logo {
+  width: 180px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 120px 24px;
+  display: grid;
+  gap: 40px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  align-items: center;
+}
+
+.section__content {
+  font-size: 1.05rem;
+}
+
+.section__image img {
+  border-radius: 12px;
+  background: #f1ede6;
+}
+
+.section--story p {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  line-height: 1.9;
+  color: var(--text);
+}
+
+.section--benefits ul {
+  list-style: none;
+  padding: 0;
+}
+
+.section--benefits li {
+  margin-bottom: 8px;
+}
+
+.section--benefits .highlight {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.section--trust p + p {
+  margin-top: 16px;
+}
+
+.section--cta {
+  padding: 140px 24px;
+  position: relative;
+}
+
+.section--cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('images/500x400.png') center/cover no-repeat;
+  filter: blur(8px) brightness(1.05);
+  opacity: 0.25;
+}
+
+.cta__overlay {
+  position: relative;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  padding: 80px 24px;
+  backdrop-filter: blur(6px);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.narrow {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.highlight {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 24px;
+}
+
+.call-btn {
+  display: inline-block;
+  padding: 20px 48px;
+  border: 1px solid var(--text);
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: background 0.35s ease, color 0.35s ease, transform 0.35s ease;
+  border-radius: 999px;
+  margin-top: 24px;
+}
+
+.call-btn:hover,
+.call-btn:focus-visible {
+  background: var(--text);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.fade-in:nth-of-type(2) {
+  animation-delay: 0.1s;
+}
+
+.fade-in:nth-of-type(3) {
+  animation-delay: 0.2s;
+}
+
+.fade-in:nth-of-type(4) {
+  animation-delay: 0.3s;
+}
+
+.fade-in:nth-of-type(5) {
+  animation-delay: 0.4s;
+}
+
+.fade-in:nth-of-type(6) {
+  animation-delay: 0.5s;
+}
+
+.fade-in:nth-of-type(7) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 120px 40px 80px;
+  }
+
+  .hero__content {
+    text-align: left;
+  }
+
+  .section {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 140px 40px;
+  }
+
+  .section--benefits,
+  .section--cta {
+    grid-template-columns: 1fr;
+  }
+
+  .section--story .section__content,
+  .section--benefits .section__content {
+    justify-self: center;
+  }
+}
+
